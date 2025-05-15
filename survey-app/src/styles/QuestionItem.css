@@ -1,0 +1,49 @@
+/* QuestionItem.css */
+
+.question-item {
+  margin-bottom: 24px;
+}
+
+.question-text {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+}
+
+.radio-option input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background: #00bfff;
+  border-radius: 50%;
+}

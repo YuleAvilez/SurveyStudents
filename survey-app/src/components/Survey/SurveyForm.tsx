@@ -43,22 +43,22 @@ const SurveyForm = () => {
         <form onSubmit={handleSubmit}>
           <GenderSelect value={gender} onChange={e => setGender(e.target.value)} />
 
-          {questions.map(({ id, text }) => {
-            const options = details
-              .filter(detail => detail.question_id === id)
-              .map(detail => detail.option_text);
+            {questions.map(({ id, text }) => {
+              const options = details
+                .filter(detail => detail.question_id === id)
+                .map(detail => detail.option_text);
 
-            return (
-              <QuestionItem
-                key={id}
-                id={id}
-                text={text}
-                answer={answers[id] || ''}
-                onChange={handleAnswerChange}
-                options={options}
-              />
-            );
-          })}
+              return (
+                <QuestionItem
+                  key={id}
+                  id={id}
+                  text={text}
+                  answer={answers[id] || ''}
+                  onChange={handleAnswerChange}
+                  options={options}
+                />
+              );
+            })}
 
           <button type="submit" className="submit-button">Enviar encuesta</button>
         </form>
