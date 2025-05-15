@@ -1,12 +1,12 @@
 import React from 'react';
-import SurveyForm from './components/SurveyForm';
+import SurveyForm from './components/Survey/SurveyForm';
 
-function App() {
+const App = () => {
   return (
-    <div className="min-h-screen bg-[#0f1117] flex items-center justify-center">
+    <div>
       <SurveyForm />
     </div>
   );
-}
+};
 
 export default App;
