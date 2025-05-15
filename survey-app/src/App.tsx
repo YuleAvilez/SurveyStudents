@@ -1,11 +1,13 @@
 import React from 'react';
 import SurveyForm from './components/Survey/SurveyForm';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
-    <div>
+    <>
       <SurveyForm />
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 

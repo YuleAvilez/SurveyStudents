@@ -123,11 +123,13 @@ select {
 .submit-button {
   background: #00c0ff;
   border: none;
-  padding: 16px 0;
+  padding: 10px 0;
   font-size: 18px;
+  align-items: center;
   color: #000;
   border-radius: 16px;
   cursor: pointer;
+  text-align: center;
   transition: background 0.3s ease;
   width: 100%;
   font-weight: 700;
@@ -136,4 +138,85 @@ select {
 
 .submit-button:hover {
   background: #00e6ff;
+}
+
+/*Cargando*/
+
+/* Spinner estilo animado */
+.spinner {
+  border: 6px solid #1f2a3a;
+  border-top: 6px solid #00c0ff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1.2s linear infinite;
+  margin: 0 auto 20px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 18px;
+  color: #cfd8dc;
+  font-weight: 600;
+}
+
+.loading-card {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 200px;
+}
+
+/* Formulario enviado */
+
+.success-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 30px;
+  color: #fff;
+  border-radius: 16px;
+  animation: popIn 0.4s ease-out;
+}
+
+.form-card{
+    background: #141a28;
+    border-radius: 20px;
+    padding: 40px 50px;
+    width: 500px;
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.08);
+    color: #f5f5f5;
+    font-weight: bolder;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.success-title {
+  color: #00e676;
+  font-size: 28px;
+  margin: 16px 0 8px;
+}
+
+.success-message {
+  color: #ccc;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
