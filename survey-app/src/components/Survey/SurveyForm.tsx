@@ -15,7 +15,6 @@ const SurveyForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí puedes enviar 'gender' y 'answers' a tu API o manejarlos como quieras
     console.log('Género:', gender);
     console.log('Respuestas:', answers);
     alert("Encuesta enviada. ¡Gracias!");
