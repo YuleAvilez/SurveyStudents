@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useQuestions } from '../../hooks/useQuestions';
 import { useQuestionDetails } from '../../hooks/useQuestionDetails';
 import QuestionItem from './QuestionItem';
-import GenderSelect from './GenderSelect';
 import LoadingSpinner from './LoadingSpinner';
 import SurveySuccess from './SurveySuccess';
 import '../../styles/SurveyForm.css';
@@ -39,9 +38,8 @@ const SurveyForm = () => {
   return (
     <div className="dashboard-container">
       <div className="form-card">
-        <h2 className="form-title">Encuesta sobre Trabajo Remoto</h2>
+        <h2 className="form-title">Encuesta Sobre Habitos De Estudio</h2>
         <form onSubmit={handleSubmit}>
-          <GenderSelect value={gender} onChange={e => setGender(e.target.value)} />
 
             {questions.map(({ id, text }) => {
               const options = details
