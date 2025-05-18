@@ -1,0 +1,48 @@
+.question-item {
+  margin-bottom: 24px;
+}
+
+.question-text {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #00bfff;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+  outline: none;
+}
+
+.radio-option input[type="radio"]:checked {
+  background-color:  #98b4ed;
+  border-color: white;
+
+}
