@@ -90,5 +90,7 @@ const SurveyForm = () => {
     </div>
   );
 };
+console.log("Hola, soy el SurveyForm.tsx"); // pruebas de commit
+// pruebas de commit
 
 export default SurveyForm;
