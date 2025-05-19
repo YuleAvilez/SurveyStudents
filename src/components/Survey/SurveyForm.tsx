@@ -22,6 +22,8 @@ const SurveyForm = () => {
     }
   }, []);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleAnswerChange = (id: number, value: string) => {
     setAnswers(prev => ({ ...prev, [id]: value }));
   };
@@ -35,6 +37,8 @@ const SurveyForm = () => {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
       for (const [questionIdStr, detailIdStr] of Object.entries(answers)) {
         const questionId = parseInt(questionIdStr, 10);
@@ -43,11 +47,13 @@ const SurveyForm = () => {
       }
 
       localStorage.setItem('survey_submitted', 'true'); // <- Guardo variable en el local storage, comments para entender el codigo 
-      toast.success('¡Encuesta enviada con éxito!');
+
       setSubmitted(true);
     } catch (error) {
       console.error('Error al enviar respuestas', error);
       toast.error('Ocurrió un error al enviar la encuesta.');
+    }finally{
+      setIsSubmitting(false);
     }
   };
 
@@ -57,7 +63,7 @@ const SurveyForm = () => {
     localStorage.removeItem('survey_submitted'); 
   };
 
-  if (loading || detailsLoading) return <LoadingSpinner />;
+  if (loading || detailsLoading || isSubmitting) return <LoadingSpinner />;
   if (error || detailsError) return <p>Error: {error || detailsError}</p>;
   if (submitted) return <SurveySuccess onRestart={handleRestart} />;
 
@@ -90,7 +96,5 @@ const SurveyForm = () => {
     </div>
   );
 };
-console.log("Hola, soy el SurveyForm.tsx"); // pruebas de commit
-// pruebas de commit
 
 export default SurveyForm;
